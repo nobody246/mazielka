@@ -4,6 +4,12 @@ import pyaudio
 from numpy import zeros,linspace,short,fromstring,hstack,transpose
 from scipy import fft
 from time import sleep, time
+import signal
+def sigHandler(s, fr):
+   stream.stop_stream()
+   stream.close()
+   exit(0)
+signal.signal(signal.SIGINT, sigHandler)
 SENSITIVITY= 0.4
 BANDWIDTH = 12
 SAMPLES = 2048
@@ -66,5 +72,3 @@ while True:
       nc = 0
       msg = ""
       scores = [0,0,0,0,0,0]
-#stream.stop_stream()
-#stream.close()
