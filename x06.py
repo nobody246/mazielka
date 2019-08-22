@@ -66,5 +66,5 @@ while True:
       nc = 0
       msg = ""
       scores = [0,0,0,0,0,0]
-stream.stop_stream()
-stream.close()
+#stream.stop_stream()
+#stream.close()
