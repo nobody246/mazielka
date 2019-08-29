@@ -4,6 +4,6 @@ Just run software on computer (with adequate mic and soundcard volume settings) 
 
 http://priyom.org/diplomatic-stations/russia/x06
 
-(note that as of the time I'm writing this the recorded example given on the link is different from the spectrogranm)
+(note that as of the time I'm writing this the recorded example given on the link is different from the spectrogram)
 
 
