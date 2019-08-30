@@ -5,11 +5,6 @@ from numpy import zeros,linspace,short,fromstring,hstack,transpose
 from scipy import fft
 from time import sleep, time
 import signal
-def sigHandler(s, fr):
-   stream.stop_stream()
-   stream.close()
-   exit(0)
-signal.signal(signal.SIGINT, sigHandler)
 SENSITIVITY= 0.4
 BANDWIDTH = 12
 SAMPLES = 2048
@@ -20,6 +15,13 @@ stream = pa.open(format=pyaudio.paInt16,
                  rate=RATE,
                  input=True,
                  frames_per_buffer=SAMPLES)
+def sigHandler(s, fr):
+   global stream, pa
+   stream.stop_stream()
+   stream.close()
+   pa.terminate()
+   exit(0)
+signal.signal(signal.SIGINT, sigHandler)
 DETECT = [815, 845, 875, 910, 950, 990]
 scores = [0,0,0,0,0,0]
 scoreIndex = 0
