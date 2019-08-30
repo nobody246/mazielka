@@ -12,8 +12,8 @@ def sigHandler(s, fr):
 signal.signal(signal.SIGINT, sigHandler)
 SENSITIVITY= 0.4
 BANDWIDTH = 12
-SAMPLES = 1048
-RATE = 11025
+SAMPLES = 2048
+RATE = 44100
 pa = pyaudio.PyAudio()
 stream = pa.open(format=pyaudio.paInt16,
                  channels=1,
