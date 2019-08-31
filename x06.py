@@ -43,8 +43,8 @@ while True:
    normalizedData = audioData / 32768.0
    intensity = abs(fft(normalizedData))[:SAMPLES/2]
    frequencies = linspace(0.0, float(RATE)/2, num=SAMPLES/2)
-   maxScoreIndex = scores.index(max(scores))
    maxScore = max(scores)
+   maxScoreIndex = scores.index(maxScore)
    tf = False
    for tone in DETECT:
       try:
